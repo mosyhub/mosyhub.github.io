@@ -47,30 +47,42 @@
     }
 
     /* VIDEO + DESCRIPTION CONTAINER */
-    .main-video-container {
+    .video-section {
       background-color: #1a1a1a;
       padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 2rem;
       text-align: center;
     }
 
-    .main-video-container video {
-      width: 80%;
-      max-width: 1000px;
+    .video-container iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
       border: 2px solid #ff9900;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(255, 153, 0, 0.2);
-      margin-bottom: 2rem;
     }
 
-    .main-video-container h2 {
+    .video-description {
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .video-description h2 {
       color: #ff9900;
       font-size: 2rem;
       margin-bottom: 1rem;
     }
 
-    .main-video-container p {
-      max-width: 800px;
-      margin: 0 auto;
+    .video-description p {
       color: #ddd;
       font-size: 1.1rem;
     }
@@ -160,15 +172,15 @@
   </header>
 
   <!-- MAIN VIDEO + DESCRIPTION -->
-<section class="video-section">
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/_Z4Xwjm69v0?si=1JL6UwboBgstl0li" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="video-description">
-            <h2>About the Project</h2>
-            <p>his rotoscope animation project involves frame-by-frame editing to isolate and stylize motion. It was done entirely using Adobe After Effects 2023 tools, combining manual brush work, keyframes, effects, and layering techniques.</p>
-        </div>
-    </section>
+  <section class="video-section">
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/_Z4Xwjm69v0?si=1JL6UwboBgstl0li" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="video-description">
+      <h2>About the Project</h2>
+      <p>This rotoscope animation project involves frame-by-frame editing to isolate and stylize motion. It was done entirely using Adobe After Effects 2023 tools, combining manual brush work, keyframes, effects, and layering techniques.</p>
+    </div>
+  </section>
 
   <!-- WEEKLY PROGRESS -->
   <section class="progress">
@@ -190,35 +202,43 @@
   </section>
 
   <!-- TOOLS USED -->
-  <section class="tools">
-    <h2>Tools Used</h2>
-    <div class="tool-grid">
-      <div>
-        <h3>RotoBrush Tool</h3>
-        <p>Allows you to separate a subject from its background using painted strokes. Essential for clean cutouts frame-by-frame.</p>
-      </div>
-      <div>
-        <h3>Pen Tool</h3>
-        <p>Used to draw precise masks and outlines, especially where the RotoBrush wasn't enough.</p>
-      </div>
-      <div>
-        <h3>Effects & Presets Panel</h3>
-        <p>Used tools like Fill, Glow, and Tint for visual appeal. Great for fast experimentation and style.</p>
-      </div>
-      <div>
-        <h3>Transform Properties + Stopwatch</h3>
-        <p>Used keyframes to animate movement: zooming, fading, and panning made the shot more dynamic.</p>
-      </div>
-      <div>
-        <h3>Freeze Feature</h3>
-        <p>Locks the roto selection so After Effects doesn't recalculate it. Helps maintain consistency throughout.</p>
-      </div>
-      <div>
-        <h3>Timeline Panel</h3>
-        <p>Controls the entire animation process — syncing transitions, layers, durations, and effects.</p>
-      </div>
+<section class="tools">
+  <h2>Tools Used</h2>
+  <div class="tool-grid">
+    <div>
+      <h3>RotoBrush Tool (After Effects)</h3>
+      <p>Used to isolate the dancing subject from the background using frame-by-frame strokes. This allowed me to insert text or effects behind the subject without affecting the foreground.</p>
     </div>
-  </section>
+    <div>
+      <h3>Pen Tool (After Effects)</h3>
+      <p>Helpful for creating manual masks on tricky edges that the RotoBrush couldn't detect properly — especially around fast movement areas like hands and feet.</p>
+    </div>
+    <div>
+      <h3>Effects & Presets Panel (After Effects)</h3>
+      <p>Used effects like <strong>Fill</strong> for recoloring objects, <strong>Glow</strong> to add emphasis, and <strong>Tint</strong> for mood shifts. These boosted the stylized look of the background and subject transitions.</p>
+    </div>
+    <div>
+      <h3>Transform Properties + Stopwatch (After Effects)</h3>
+      <p>Used to animate the subject and background — including zoom-in effects, fade transitions, and subtle pans. This made the scene feel more cinematic and alive.</p>
+    </div>
+    <div>
+      <h3>Freeze Feature (After Effects)</h3>
+      <p>Once the roto selection was clean, I used Freeze to lock the frames in place. This prevented After Effects from recalculating and shifting the selection across frames.</p>
+    </div>
+    <div>
+      <h3>Timeline Panel (After Effects)</h3>
+      <p>Coordinated all layers, keyframes, and transitions here. Essential for syncing the motion of the background, text, and subject with the music and visuals.</p>
+    </div>
+    <div>
+      <h3>CapCut</h3>
+      <p>Used for quick mobile edits and final color grading. I also used CapCut to add modern video effects and overlays that were easier to apply here than in AE.</p>
+    </div>
+    <div>
+      <h3>Microsoft Clipchamp</h3>
+      <p>Used during the early phase for organizing clips and testing out pacing. Its drag-and-drop interface helped visualize the structure before jumping into After Effects.</p>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
