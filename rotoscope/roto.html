@@ -59,16 +59,30 @@
       width: 100%;
       max-width: 1000px;
       margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .video-box {
+      flex: 1 1 400px;
+      max-width: 480px;
       text-align: center;
     }
 
-    .video-container iframe {
+    .video-box iframe {
       width: 100%;
-      max-width: 800px;
-      height: 450px;
+      height: 270px;
       border: 2px solid #ff9900;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(255, 153, 0, 0.2);
+      margin-bottom: 0.5rem;
+    }
+
+    .video-box p {
+      color: #ccc;
+      font-size: 1rem;
     }
 
     .video-description {
@@ -174,7 +188,14 @@
   <!-- MAIN VIDEO + DESCRIPTION -->
   <section class="video-section">
     <div class="video-container">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/_Z4Xwjm69v0?si=1JL6UwboBgstl0li" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/_Z4Xwjm69v0?si=1JL6UwboBgstl0li" title="Main Project Video" frameborder="0" allowfullscreen></iframe>
+        <p>Main Project Video</p>
+      </div>
+      <div class="video-box">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Mm7YqIZm65A?si=2weavBBF4xlut7R7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p>Reference Video</p>
+      </div>
     </div>
     <div class="video-description">
       <h2>About the Project</h2>
