@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Theme</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 165, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff9900;
+            text-shadow: 0 0 5px #ff6600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ff9900;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff9900;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Video Container Styles */
+        .video-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 165, 0, 0.3);
+            box-shadow: 0 0 20px rgba(255, 102, 0, 0.2);
+        }
+
+        .video-description {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            margin-top: 1rem;
+        }
+
+        /* Planet Section Styles */
+        .planet-section {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .planet-section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .planet-video {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .planet-video iframe,
+        .planet-video video {
+            width: 100%;
+            height: 315px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 165, 0, 0.3);
+        }
+
+        .planet-info {
+            flex: 1;
+            padding: 0 2rem;
+        }
+
+        .planet-title {
+            color: #ff9900;
+            font-size: 2rem;
+            margin-top: 0;
+            text-shadow: 0 0 5px #ff6600;
+        }
+
+        .planet-description {
+            line-height: 1.6;
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+
+        /* Planet Details Card */
+        .planet-details {
+            background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
+            padding: 1.5rem;
+            border-radius: 12px;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.2);
+            border: 1px solid rgba(255, 165, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .planet-details:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4);
+        }
+
+        .planet-details h3 {
+            color: #ff9900;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .planet-details p {
+            margin: 0.5rem 0;
+            color: #ddd;
+        }
+
+        .planet-details strong {
+            color: #fff;
+        }
+
+        /* Time Conversion Styles */
+        .planet-age-converter {
+            padding: 3rem 2rem;
+            text-align: center;
+            background-color: #1a1a1a;
+            margin: 2rem 0;
+            border-top: 2px solid rgba(255, 165, 0, 0.3);
+            border-bottom: 2px solid rgba(255, 165, 0, 0.3);
+        }
+
+        .planet-age-converter h2 {
+            font-size: 2.5rem;
+            color: #ffa500;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 8px #ff6600;
+        }
+
+        .age-input {
+            margin-bottom: 2rem;
+        }
+
+        .age-input input {
+            padding: 0.8rem 1.2rem;
+            font-size: 1.1rem;
+            width: 250px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 165, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            outline: none;
+            margin-right: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .age-input input:focus {
+            border-color: #ff9900;
+        }
+
+        .age-input button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1.1rem;
+            border: none;
+            background-color: #ff9900;
+            color: #000;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .age-input button:hover {
+            background-color: #ffbb33;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 153, 0, 0.3);
+        }
+
+        .age-input .note {
+            font-style: italic;
+            color: #ccc;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Age result display in planet details */
+        .planet-details .age-result {
+            background-color: rgba(255, 165, 0, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px solid rgba(255, 165, 0, 0.3);
+        }
+
+        .planet-details .age-result h4 {
+            color: #ff9900;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .planet-details .age-result p {
+            margin: 0.25rem 0;
+            color: #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .video-container iframe {
+                height: 250px;
+            }
+            
+            .planet-section {
+                flex-direction: column;
+                padding: 0 1rem;
+            }
+            
+            .planet-section:nth-child(even) {
+                flex-direction: column;
+            }
+            
+            .planet-info {
+                padding: 1rem 0;
+            }
+
+            .planet-age-converter {
+                padding: 2rem 1rem;
+            }
+
+            .age-input input {
+                width: 200px;
+                margin-bottom: 1rem;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Solar System</div>
+        <nav>
+            <ul>
+                <li><a href="/rotoscope/index.html">Home</a></li>
+                <li><a href="/rotoscope/solar.html">Solar System</a></li>
+                <li><a href="/rotoscope/roto.html">Rotoscope</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="video-section">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iMqbn9TtZBQ?si=9e6LohpqiBt3_KFK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-description">
+            <h2>Our Solar System</h2>
+            <p>This video provides an overview of our solar system, showing the relative sizes and distances of the planets orbiting our Sun. The solar system formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud.</p>
+        </div>
+    </section>
+
+    <!-- Time Conversion Section -->
+    <section class="planet-age-converter">
+        <h2>Planetary Time Conversion</h2>
+        <div class="age-input">
+            <input type="number" id="earthAge" placeholder="Enter Earth Years">
+            <button onclick="convertAge()">Calculate</button>
+            <p class="note">Enter an Earth year value to see how time passes on other planets and discover your age across the solar system.</p>
+        </div>
+    </section>
+
+    <!-- Mercury Section -->
+    <section class="planet-section">
+        <div class="planet-video">
+            <video controls width="100%" height="315">
+                <source src="/media/mercury.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="planet-info">
+            <h2 class="planet-title">Mercury</h2>
+            <p class="planet-description">Mercury is the smallest and innermost planet in the Solar System. Its orbit around the Sun takes only 87.97 Earth days, the shortest of all the planets. It is named after the Roman god Mercurius (Mercury), god of commerce, messenger of the gods, and mediator between gods and mortals. With extreme temperature variations, Mercury experiences scorching days up to 800°F (430°C) and freezing nights down to -300°F (-180°C).</p>
+            <div class="planet-details" id="mercury-details">
+                <h3>Age Conversion</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venus Section -->
+    <section class="planet-section">
+        <div class="planet-video">
+            <video controls width="100%" height="315">
+                <source src="/media/venus.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="planet-info">
+            <h2 class="planet-title">Venus</h2>
+            <p class="planet-description">Venus is the second planet from the Sun and Earth's closest planetary neighbor. It's one of the four terrestrial planets, and it's often called Earth's twin because it's similar in size and density. However, Venus has a toxic atmosphere of carbon dioxide with clouds of sulfuric acid. The surface temperature reaches 900°F (475°C), making it the hottest planet in our solar system due to its extreme greenhouse effect.</p>
+            <div class="planet-details" id="venus-details">
+                <h3>Age Conversion</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Earth Section -->
+    <section class="planet-section">
+        <div class="planet-video">
+            <video controls width="100%" height="315">
+                <source src="/media/0001-0240.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="planet-info">
+            <h2 class="planet-title">Earth</h2>
+            <p class="planet-description">Earth is the third planet from the Sun and the only astronomical object known to harbor life. About 29% of Earth's surface is land consisting of continents and islands. The remaining 71% is covered with water, mostly by oceans but also by lakes, rivers and other fresh water. Earth's atmosphere contains 78% nitrogen and 21% oxygen, creating the perfect conditions for life as we know it.</p>
+            <div class="planet-details" id="earth-details">
+                <h3>Age Conversion</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mars Section -->
+    <section class="planet-section">
+        <div class="planet-video">
+            <video controls width="100%" height="315">
+                <source src="/media/mars.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="planet-info">
+            <h2 class="planet-title">Mars</h2>
+            <p class="planet-description">Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In English, Mars carries the name of the Roman god of war and is often referred to as the "Red Planet" due to the iron oxide prevalent on its surface. Mars has two small moons, Phobos and Deimos, and evidence suggests it once had liquid water on its surface.</p>
+            <div class="planet-details" id="mars-details">
+                <h3>Age Conversion</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jupiter Section -->
+    <section class="planet-section">
+        <div class="planet-video">
+            <video controls width="100%" height="315">
+                <source src="/media/jupiter.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="planet-info">
+            <h2 class="planet-title">Jupiter</h2>
+            <p class="planet-description">Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than two and a half times that of all the other planets in the Solar System combined. Jupiter is one of the brightest objects visible to the naked eye in the night sky. It has over 80 known moons, including the four largest called the Galilean moons: Io, Europa, Ganymede, and Callisto.</p>
+            <div class="planet-details" id="jupiter-details">
+                <h3>Age Conversion</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Saturn Section -->
+    <section class="planet-section">
+        <div class="planet-video">
+            <video controls width="100%" height="315">
+                <source src="/media/satedit.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="planet-info">
+            <h2 class="planet-title">Saturn</h2>
+            <p class="planet-description">Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius of about nine times that of Earth. Saturn is most famous for its prominent ring system, which is composed mostly of ice particles with a smaller amount of rocky debris and dust. Saturn has 146 known moons, with Titan being the largest and most Earth-like.</p>
+            <div class="planet-details" id="saturn-details">
+                <h3>Age Conversion</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Uranus Section -->
+    <section class="planet-section">
+        <div class="planet-video">
+            <video controls width="100%" height="315">
+                <source src="/media/uranus.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="planet-info">
+            <h2 class="planet-title">Uranus</h2>
+            <p class="planet-description">Uranus is the seventh planet from the Sun and has the third-largest diameter in our solar system. It was the first planet found with the aid of a telescope. Uranus is an ice giant, with most of its mass made up of a hot dense fluid of "icy" materials - water, methane, and ammonia - above a small rocky core. Uniquely, Uranus rotates on its side, with an axial tilt of about 98 degrees.</p>
+            <div class="planet-details" id="uranus-details">
+                <h3>Age Conversion</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neptune Section -->
+    <section class="planet-section">
+        <div class="planet-video">
+            <video controls width="100%" height="315">
+                <source src="/media/neptune.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="planet-info">
+            <h2 class="planet-title">Neptune</h2>
+            <p class="planet-description">Neptune is the eighth and most distant planet from the Sun in the Solar System. It is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. Neptune is 17 times the mass of Earth, slightly more massive than its near-twin Uranus. Neptune has the strongest winds in the solar system, reaching speeds of up to 1,200 mph (2,100 km/h).</p>
+            <div class="planet-details" id="neptune-details">
+                <h3>Age Conversion</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pluto Section -->
+    <section class="planet-section">
+        <div class="planet-video">
+            <video controls width="100%" height="315">
+                <source src="/media/pluto.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="planet-info">
+            <h2 class="planet-title">Pluto</h2>
+            <p class="planet-description">Pluto is a dwarf planet in the Kuiper Belt, a ring of bodies beyond the orbit of Neptune. It was discovered in 1930 and was originally classified as the ninth planet until 2006, when it was reclassified as a dwarf planet. Pluto is smaller than Earth's moon and has five known moons, with Charon being the largest. The surface temperature on Pluto averages around -375°F (-226°C), making it one of the coldest places in the solar system.</p>
+            <div class="planet-details" id="pluto-details">
+                <h3>Age Conversion</h3>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const planets = [
+            { name: "Mercury", orbit: 0.24, distance: "57.9 million km" },
+            { name: "Venus", orbit: 0.62, distance: "108.2 million km" },
+            { name: "Earth", orbit: 1.00, distance: "149.6 million km" },
+            { name: "Mars", orbit: 1.88, distance: "227.9 million km" },
+            { name: "Jupiter", orbit: 11.86, distance: "778.5 million km" },
+            { name: "Saturn", orbit: 29.45, distance: "1.43 billion km" },
+            { name: "Uranus", orbit: 84.02, distance: "2.87 billion km" },
+            { name: "Neptune", orbit: 164.79, distance: "4.50 billion km" },
+            { name: "Pluto", orbit: 247.68, distance: "5.91 billion km" },
+        ];
+
+        function convertAge() {
+            const input = parseFloat(document.getElementById("earthAge").value);
+
+            // Clear all previous dynamic info
+            const allDetails = document.querySelectorAll('.planet-details');
+            allDetails.forEach(detail => {
+                const existingResult = detail.querySelector('.age-result');
+                if (existingResult) existingResult.remove();
+            });
+
+            if (isNaN(input) || input <= 0) {
+                alert("Please enter a valid positive number.");
+                return;
+            }
+
+            // Constants
+            const earthDays = input * 365.25;
+
+            planets.forEach(planet => {
+                const age = (input / planet.orbit).toFixed(2);
+                const revolutions = Math.floor(input / planet.orbit);
+
+                // Estimate: orbit circumference based on average distance (rough idea, not scale accurate)
+                let distanceNum = parseFloat(planet.distance.replace(/[^\d.]/g, ''));
+                if (planet.distance.includes("billion")) distanceNum *= 1_000_000_000;
+                else if (planet.distance.includes("million")) distanceNum *= 1_000_000;
+
+                const orbitLength = 2 * Math.PI * distanceNum; // in km
+                const distanceTraveled = orbitLength * revolutions;
+
+                // Get planet details container
+                const planetName = planet.name.toLowerCase();
+                const detailsContainer = document.getElementById(`${planetName}-details`);
+                if (detailsContainer) {
+                    const ageResult = document.createElement('div');
+                    ageResult.className = 'age-result';
+                    ageResult.innerHTML = `
+                        <h4>Your Age on ${planet.name}</h4>
+                        <p><strong>Age:</strong> ${age} ${planet.name} years</p>
+                        <p><strong>Birthdays Celebrated:</strong> ${revolutions}</p>
+                        <p><strong>Distance Traveled Around Sun:</strong> ${(distanceTraveled / 1_000_000_000).toFixed(2)} billion km</p>
+                        <p><strong>Days Experienced:</strong> ${(earthDays / (planet.orbit * 365.25)).toFixed(0)} ${planet.name} days</p>
+                    `;
+                    detailsContainer.appendChild(ageResult);
+                }
+            });
+
+            document.getElementById('mercury-details').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+    </script>
+
+</body>
+</html>

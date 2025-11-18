@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Vista Installation</title>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <!-- BOOTSTRAP AND CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f0ff 100%);
+            font-family: "Segoe UI", sans-serif;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        .site-header {
+            background-color: #0d6efd !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .main-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(8px);
+            margin-top: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .title-box {
+            color: #1a4d8c;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-box {
+            background-color: rgba(248, 249, 250, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #0d6efd;
+        }
+
+        .footer {
+            font-size: 0.9rem;
+            color: #6c757d;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(248, 249, 250, 0.95);
+            backdrop-filter: blur(5px);
+            padding: 1.2rem;
+            border-top: 1px solid rgba(222, 226, 230, 0.5);
+        }
+
+        iframe {
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(222, 226, 230, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        iframe:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-box p {
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        @media (max-width: 992px) {
+            .main-box {
+                padding: 2rem;
+            }
+            
+            .sub-box {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-box {
+                padding: 1.5rem;
+            }
+            
+            iframe {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .main-box {
+                padding: 1.2rem;
+                margin-top: 1rem;
+            }
+            
+            iframe {
+                height: 220px;
+            }
+            
+            .footer {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md site-header text-white border-bottom shadow">
+        <div class="container-fluid container-md">
+          <a class="navbar-brand fw-bold text-white" href="../index.html">ITOS220-T: Operating Systems</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav px-3 me-auto mb-2 mb-md-0 d-flex justify-content-end w-100">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Installations</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/installation/windows95.html">Windows 95</a></li>
+                  <li><a class="dropdown-item" href="/installation/windowsNT.html">Windows NT 4.0</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows98SE.html">Windows 98 SE</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows2000.html">Windows 2000</a></li>
+                  <li><a class="dropdown-item" href="/installation/windowsME.html">Windows ME</a></li>
+                  <li><a class="dropdown-item" href="/installation/windowsXP.html">Windows XP</a></li>
+                  <li><a class="dropdown-item" href="/installation/windowsServer2003.html">Windows Server 2003</a></li>
+                  <li><a class="dropdown-item" href="/installation/windowsVista.html">Windows Vista</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows2008R2.html">Windows Server 2008 R2</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows7.html">Windows 7</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows8.html">Windows 8</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows10.html">Windows 10</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows11.html">Windows 11</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Laboratory Activities</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/activities/active-directory.html">Active Directory</a></li>
+                  <li><a class="dropdown-item" href="/activities/dhcp-joining.html">DHCP & Joining Workstations</a></li>
+                  <li><a class="dropdown-item" href="/activities/group-policy.html">Group Policy Management</a></li>
+                  <li><a class="dropdown-item" href="/activities/raid.html">RAID</a></li>
+                  <li><a class="dropdown-item" href="/activities/file-server.html">File Services</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="../Final.html">Final Activity</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Main Content -->
+    <div class="container-md mt-4 mb-5">
+        <div class="main-box">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="fw-bold title-box h2 mb-4">Windows Vista Installation</div>
+                </div>
+            </div>
+            
+            <div class="row d-flex justify-content-center my-4">
+                <div class="col-lg-8 col-md-10 text-center">
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/FVIMeV-EBHs?si=zK-6fhzlA9zbVjgL" 
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-10">
+                    <div class="sub-box">
+                        <div class="fw-bold h4 mb-4 title-box">History of Windows Vista</div>
+                        <div class="text-box">
+                            <p>
+                                Released in January 2007, Windows Vista represented Microsoft's ambitious vision for a more secure and visually stunning operating system. Its signature Aero interface introduced transparent glass effects, live thumbnails, and smooth animations that set a new standard for desktop aesthetics. Under the hood, Vista pioneered security innovations like User Account Control (UAC) and BitLocker encryption that became foundational for future Windows versions.
+                            </p>
+                            <p>
+                                Despite its groundbreaking features, Vista faced challenges with hardware requirements and software compatibility that impacted its initial reception. However, its legacy lives on - many Vista innovations were refined in Windows 7, proving Vista's role as an important transitional release that pushed computing forward.
+                            </p>
+                            <p>
+                                Today, Vista is recognized for its bold design choices and security advancements that shaped modern Windows architecture. Its influence can still be seen in current Windows versions, particularly in security models and visual design language.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div>
+            &copy; <script>document.write(new Date().getFullYear());</script> by Yago AS. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

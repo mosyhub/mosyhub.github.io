@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baybuild</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">BayBUILD</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">☰</div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Building the Future</h1>
+            <p>Trusted construction solutions for residential and commercial projects.</p>
+            <a href="#contact" class="btn">Get a Quote</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>
+            We are a professional construction company dedicated to delivering high-quality
+            residential and commercial building solutions. With over 10+ years of experience,
+            we ensure safety, precision, and excellence in every project.
+        </p>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Residential Construction</h3>
+                <p>House building, renovation, remodeling, and custom designs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Commercial Projects</h3>
+                <p>Offices, buildings, structural repairs, and large-scale constructions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Architectural Planning</h3>
+                <p>Floor plans, 3D models, and project layout planning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <h2>Our Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="images/project1.jpg" alt="">
+                <h4>Modern House in Makati</h4>
+            </div>
+            <div class="project-card">
+                <img src="images/project2.jpg" alt="">
+                <h4>Commercial Building Renovation</h4>
+            </div>
+            <div class="project-card">
+                <img src="images/project3.jpg" alt="">
+                <h4>Industrial Warehouse</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+        <h2>Contact Us</h2>
+        <form action="https://formspree.io/f/your-id-here" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Email Address" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button class="btn" type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Construction Company. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

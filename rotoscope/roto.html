@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rotoscope Project</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background-color: #000;
+      border-bottom: 1px solid #ff9900;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff9900;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #f0f0f0;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff9900;
+    }
+
+    /* VIDEO + DESCRIPTION CONTAINER */
+    .video-section {
+      background-color: #1a1a1a;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .video-box {
+      flex: 1 1 400px;
+      max-width: 480px;
+      text-align: center;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 270px;
+      border: 2px solid #ff9900;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 153, 0, 0.2);
+      margin-bottom: 0.5rem;
+    }
+
+    .video-box p {
+      color: #ccc;
+      font-size: 1rem;
+    }
+
+    .video-description {
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .video-description h2 {
+      color: #ff9900;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .video-description p {
+      color: #ddd;
+      font-size: 1.1rem;
+    }
+
+    /* WEEKLY PROGRESS */
+    .progress {
+      padding: 3rem 2rem;
+      background-color: #121212;
+    }
+
+    .progress h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #ff9900;
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .week {
+      text-align: center;
+    }
+
+    .week h3 {
+      margin-bottom: 0.5rem;
+      color: #ff9900;
+    }
+
+    .week video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 153, 0, 0.2);
+      border: 1px solid #ff990044;
+    }
+
+    /* TOOLS SECTION */
+    .tools {
+      padding: 3rem 2rem;
+      background-color: #0d0d0d;
+    }
+
+    .tools h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #ff9900;
+    }
+
+    .tools h3 {
+      color: #ff9900;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+
+    .tools p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding-top: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Rotoscope</div>
+    <nav>
+      <a href="/rotoscope/index.html">Home</a>
+      <a href="/rotoscope/solar.html">Solar System</a>
+      <a href="/rotoscope/roto.html">Rotoscope</a>
+    </nav>
+  </header>
+
+  <!-- MAIN VIDEO + DESCRIPTION -->
+  <section class="video-section">
+    <div class="video-container">
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/_Z4Xwjm69v0?si=1JL6UwboBgstl0li" title="Main Project Video" frameborder="0" allowfullscreen></iframe>
+        <p>Main Project Video</p>
+      </div>
+      <div class="video-box">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Mm7YqIZm65A?si=2weavBBF4xlut7R7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p>Reference Video</p>
+      </div>
+    </div>
+    <div class="video-description">
+      <h2>About the Project</h2>
+      <p>This rotoscope animation project involves frame-by-frame editing to isolate and stylize motion. It was done entirely using Adobe After Effects 2023 tools, combining manual brush work, keyframes, effects, and layering techniques.</p>
+    </div>
+  </section>
+
+  <!-- WEEKLY PROGRESS -->
+  <section class="progress">
+    <h2>Weekly Progress</h2>
+    <div class="week-grid">
+      <div class="week"><h3>Week 1</h3><video src="/media/week1.mp4" controls></video></div>
+      <div class="week"><h3>Week 2</h3><video src="/media/week2.mp4" controls></video></div>
+      <div class="week"><h3>Week 3</h3><video src="/media/week3.mp4" controls></video></div>
+      <div class="week"><h3>Week 4</h3><video src="/media/week4.mp4" controls></video></div>
+      <div class="week"><h3>Week 5</h3><video src="/media/week5.mp4" controls></video></div>
+      <div class="week"><h3>Week 6</h3><video src="/media/week6.mp4" controls></video></div>
+      <div class="week"><h3>Week 7</h3><video src="/media/week7.mp4" controls></video></div>
+      <div class="week"><h3>Week 8</h3><video src="/media/week8.mp4" controls></video></div>
+      <div class="week"><h3>Week 9</h3><video src="/media/week9.mp4" controls></video></div>
+      <div class="week"><h3>Week 10</h3><video src="/media/week10.mp4" controls></video></div>
+      <div class="week"><h3>Week 11</h3><video src="/media/week11.mp4" controls></video></div>
+      <div class="week"><h3>Week 12</h3><video src="/media/week12.mp4" controls></video></div>
+    </div>
+  </section>
+
+  <!-- TOOLS USED -->
+<section class="tools">
+  <h2>Tools Used</h2>
+  <div class="tool-grid">
+    <div>
+      <h3>RotoBrush Tool (After Effects)</h3>
+      <p>Used to isolate the dancing subject from the background using frame-by-frame strokes. This allowed me to insert text or effects behind the subject without affecting the foreground.</p>
+    </div>
+    <div>
+      <h3>Pen Tool (After Effects)</h3>
+      <p>Helpful for creating manual masks on tricky edges that the RotoBrush couldn't detect properly — especially around fast movement areas like hands and feet.</p>
+    </div>
+    <div>
+      <h3>Effects & Presets Panel (After Effects)</h3>
+      <p>Used effects like <strong>Fill</strong> for recoloring objects, <strong>Glow</strong> to add emphasis, and <strong>Tint</strong> for mood shifts. These boosted the stylized look of the background and subject transitions.</p>
+    </div>
+    <div>
+      <h3>Transform Properties + Stopwatch (After Effects)</h3>
+      <p>Used to animate the subject and background — including zoom-in effects, fade transitions, and subtle pans. This made the scene feel more cinematic and alive.</p>
+    </div>
+    <div>
+      <h3>Freeze Feature (After Effects)</h3>
+      <p>Once the roto selection was clean, I used Freeze to lock the frames in place. This prevented After Effects from recalculating and shifting the selection across frames.</p>
+    </div>
+    <div>
+      <h3>Timeline Panel (After Effects)</h3>
+      <p>Coordinated all layers, keyframes, and transitions here. Essential for syncing the motion of the background, text, and subject with the music and visuals.</p>
+    </div>
+    <div>
+      <h3>CapCut</h3>
+      <p>Used for quick mobile edits and final color grading. I also used CapCut to add modern video effects and overlays that were easier to apply here than in AE.</p>
+    </div>
+    <div>
+      <h3>Microsoft Clipchamp</h3>
+      <p>Used during the early phase for organizing clips and testing out pacing. Its drag-and-drop interface helped visualize the structure before jumping into After Effects.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

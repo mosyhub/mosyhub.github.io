@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multimedia</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      font-family: 'Segoe UI', sans-serif;
+      color: #f0f0f0;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #000;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #ff9900;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ff9900;
+    }
+
+    nav a {
+      color: #f0f0f0;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff9900;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .video-section {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .video-section iframe {
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      border-radius: 12px;
+      border: 2px solid #ff990044;
+      box-shadow: 0 0 15px rgba(255, 153, 0, 0.2);
+      margin-bottom: 1rem;
+    }
+
+    .video-section h2 {
+      font-size: 2rem;
+      color: #ff9900;
+      margin-bottom: 1rem;
+    }
+
+    .video-section p {
+      font-size: 1.1rem;
+      color: #ccc;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .video-section iframe {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">🎨 Multimedia</div>
+    <nav>
+      <a href="/rotoscope/index.html">Home</a>
+      <a href="/rotoscope/solar.html">Solar System</a>
+      <a href="/rotoscope/roto.html">Rotoscope</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Solar System Section -->
+    <section class="video-section">
+      <h2>Solar System Project</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/iMqbn9TtZBQ?si=9e6LohpqiBt3_KFK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p>
+        This project illustrates how time differs across planets in our solar system. It includes a planetary age calculator, animations of planetary orbits, and rich visual content that immerses the viewer in a cosmic perspective.
+      </p>
+    </section>
+
+    <!-- Rotoscope Section -->
+    <section class="video-section">
+      <h2>Rotoscope Animation</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/_Z4Xwjm69v0?si=RwJekXDnRSDs8BcK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p>
+        This frame-by-frame rotoscoping animation was created in Adobe After Effects 2023 using RotoBrush, Pen Tool, and advanced masking techniques. It showcases precise motion capture and visual enhancements through effects and keyframes.
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>

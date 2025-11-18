@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Bangers&display=swap');
+
+:root {
+    --spider-red: #e63946;
+    --spider-blue: #1d3557;
+    --spider-light: #f1faee;
+    --spider-accent: #a8dadc;
+    --gray-100: #f6f8fa;
+    --gray-200: #e1e4e8;
+    --gray-300: #d1d5da;
+    --gray-600: #586069;
+    --gray-900: #24292e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--spider-light);
+    color: var(--spider-blue);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, var(--spider-red), var(--spider-blue));
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,10 Q50,0 70,10 Q100,30 90,50 Q100,70 70,90 Q50,100 30,90 Q0,70 10,50 Q0,30 30,10 Z" fill="none" stroke="white" stroke-width="0.5" opacity="0.2"/></svg>');
+    background-size: 100px 100px;
+    opacity: 0.3;
+}
+
+header h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.profile-sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 1px solid var(--gray-200);
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--spider-red);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    margin: 0 auto 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.student-name {
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    color: var(--spider-blue);
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.student-title {
+    font-size: 1rem;
+    color: var(--spider-red);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.student-bio {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.student-details {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+.detail-item .icon {
+    width: 20px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.stats-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-200);
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.stat-label {
+    color: var(--gray-600);
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--spider-blue);
+}
+
+.works-content {
+    min-height: 100vh;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.section-title {
+    font-family: 'Bangers', cursive;
+    font-size: 3rem;
+    color: var(--spider-blue);
+    letter-spacing: 2px;
+    margin-right: 15px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.section-count {
+    background: var(--spider-red);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.button-container {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.spider-button {
+    font-family: 'Montserrat', sans-serif;
+    background: white;
+    color: var(--spider-blue);
+    border: 2px solid var(--gray-200);
+    padding: 20px 25px;
+    font-size: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.spider-button:hover {
+    border-color: var(--spider-red);
+    background: var(--spider-red);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+}
+
+.button-icon {
+    font-size: 1.2rem;
+    margin-right: 12px;
+}
+
+.button-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.button-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.button-desc {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: 2px;
+}
+
+.button-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.spider-button:hover .button-arrow {
+    transform: translateX(5px);
+}
+
+footer {
+    background: linear-gradient(135deg, var(--spider-blue), var(--spider-red));
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .main-layout {
+        grid-template-columns: 280px 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .main-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .profile-sidebar {
+        position: static;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}

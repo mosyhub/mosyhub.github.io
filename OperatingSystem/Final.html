@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows ME Installation</title>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <!-- BOOTSTRAP AND CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f0ff 100%);
+            font-family: "Segoe UI", sans-serif;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        .site-header {
+            background-color: #0d6efd !important;
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .main-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            margin-top: 2rem;
+            /* Add scroll-margin-top for smooth scrolling with fixed header */
+            scroll-margin-top: 80px;
+        }
+
+        .title-box {
+            color: #1a4d8c;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-box {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #0d6efd;
+        }
+
+        .footer {
+            font-size: 0.9rem;
+            color: #6c757d;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(248, 249, 250, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 1rem;
+            border-top: 1px solid #dee2e6;
+        }
+
+        iframe {
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border: 1px solid #dee2e6;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            height: fit-content;
+            margin-top: 2rem;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar-title {
+            color: #1a4d8c;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #0d6efd;
+        }
+
+        .sidebar-menu {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .sidebar-menu li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu li:hover {
+            padding-left: 0.5rem;
+            background-color: #f8f9fa;
+        }
+
+        .sidebar-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-menu a {
+            color: #495057;
+            text-decoration: none;
+            display: block;
+            padding: 0.25rem 0.5rem;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu a:hover {
+            color: #0d6efd;
+            border-left: 3px solid #0d6efd;
+        }
+
+        .sidebar-menu a.active {
+            color: #0d6efd;
+            font-weight: bold;
+            border-left: 3px solid #0d6efd;
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                position: relative;
+                margin-bottom: 2rem;
+                top: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            iframe {
+                width: 100%;
+                height: auto;
+            }
+            
+            .main-box {
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md site-header text-white border-bottom shadow">
+        <div class="container-fluid container-md">
+          <a class="navbar-brand fw-bold text-white" href="../index.html">ITOS220-T: Operating Systems</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav px-3 me-auto mb-2 mb-md-0 d-flex justify-content-end w-100">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Installations</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/installation/windows95.html">Windows 95</a></li>
+                  <li><a class="dropdown-item" href="/installation/windowsNT.html">Windows NT 4.0</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows98SE.html">Windows 98 SE</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows2000.html">Windows 2000</a></li>
+                  <li><a class="dropdown-item" href="/installation/windowsME.html">Windows ME</a></li>
+                  <li><a class="dropdown-item" href="/installation/windowsXP.html">Windows XP</a></li>
+                  <li><a class="dropdown-item" href="/installation/windowsServer2003.html">Windows Server 2003</a></li>
+                  <li><a class="dropdown-item" href="/installation/windowsVista.html">Windows Vista</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows2008R2.html">Windows Server 2008 R2</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows7.html">Windows 7</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows8.html">Windows 8</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows10.html">Windows 10</a></li>
+                  <li><a class="dropdown-item" href="/installation/windows11.html">Windows 11</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Laboratory Activities</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/activities/active-directory.html">Active Directory</a></li>
+                  <li><a class="dropdown-item" href="/activities/dhcp-joining.html">DHCP & Joining Workstations</a></li>
+                  <li><a class="dropdown-item" href="/activities/group-policy.html">Group Policy Management</a></li>
+                  <li><a class="dropdown-item" href="/activities/raid.html">RAID</a></li>
+                  <li><a class="dropdown-item" href="/activities/file-server.html">File Services</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Final Activity</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main content with sidebar -->
+      <div class="container-md mt-4 mb-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <h5 class="sidebar-title">Server Components</h5>
+                    <ul class="sidebar-menu">
+                        <li><a href="#domain-controller" class="nav-link">Domain Controller</a></li>
+                        <li><a href="#domain-users" class="nav-link">Domain Users</a></li>
+                        <li><a href="#dhcp" class="nav-link">DHCP Server</a></li>
+                        <li><a href="#file-sharing" class="nav-link">File Server</a></li>
+                        <li><a href="#raid" class="nav-link">R.A.I.D</a></li>
+                        <li><a href="#remote-desktop" class="nav-link">Remote Desktop</a></li>
+                        <li><a href="#web-app-server" class="nav-link">Web and Application Server</a></li>
+                        <li><a href="#group-policy" class="nav-link">Group Policy</a></li>
+                        <li><a href="#windows-dev" class="nav-link">Windows Development Services</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="col-md-9">
+                <!-- 1st section -->
+                <div id="domain-controller" class="main-box">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="fw-bold title-box h2">Domain Controller</div>
+                        </div>
+                    </div>
+                    
+                    <div class="row d-flex justify-content-center my-3">
+                        <div class="col-md-10 text-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/pm5MqGZr3JI?si=azAPxayuWU522OeK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center gap-2 mt-4">
+                        <div class="col-md-12 sub-box">
+                            <div class="fw-bold h4 mb-3 title-box">Domain Controller</div>
+                            <p>
+                                A Domain Controller (DC) is a critical server in a Windows network that centralizes security and administration by managing user authentication, authorization, and access to network resources through Active Directory (AD). It authenticates users and computers using protocols like Kerberos and NTLM, enforces security policies via Group Policy Objects (GPOs), and maintains a replicated database of domain objects (users, groups, devices) to ensure consistency across the network. By acting as the authority for domain logins and permissions, a Domain Controller simplifies IT management, enhances security, and enables scalable enterprise environments.
+                            </p>
+                    
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2nd section -->
+                <div id="domain-users" class="main-box mt-4">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="fw-bold title-box h2">Domain Users</div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center my-3">
+                        <div class="col-md-10 text-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/SMdfiZAAVQk?si=N8RR5Pt2wbVLVHNB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center gap-2 mt-4">
+                        <div class="col-md-12 sub-box">
+                            <div class="fw-bold h4 mb-3 title-box">Domain Users</div>
+                            <p>
+                                Domain Users are user accounts created and managed within a Windows Active Directory (AD) domain, allowing centralized authentication and access control across a networked environment. These accounts enable users to log in to any computer within the domain (assuming proper permissions) while adhering to security policies set by administrators. Domain users are stored in Active Directory rather than on individual machines, simplifying user management, password policies, and permissions for shared resources like files, printers, and applications. Administrators can assign privileges, enforce Group Policy settings, and delegate access rights based on organizational roles, making domain users essential for enterprise IT environments. Unlike local user accounts (limited to a single machine), domain users provide seamless access across all domain-joined systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3rd section -->
+                <div id="dhcp" class="main-box mt-4">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="fw-bold title-box h2">DHCP</div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center my-3">
+                        <div class="col-md-10 text-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Mv1Kcbl0Z6E?si=FKzyYoctSbZH4Qws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center gap-2 mt-4">
+                        <div class="col-md-12 sub-box">
+                            <div class="fw-bold h4 mb-3 title-box">DHCP</div>
+                            <p>
+                                DHCP (Dynamic Host Configuration Protocol) is a network protocol that automatically assigns IP addresses, subnet masks, default gateways, and other essential network configuration parameters to devices (clients) on a network. By dynamically leasing IP addresses from a predefined pool, DHCP eliminates the need for manual IP configuration, reducing errors and simplifying network management. A DHCP server (often running on a router, firewall, or dedicated server) handles lease distribution, renewal, and reclamation of unused addresses, ensuring efficient IP utilization. DHCP is widely used in both small home networks and large enterprise environments, supporting seamless connectivity for devices like computers, smartphones, and IoT equipment. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- 4th section -->
+                 <div id="file-sharing" class="main-box mt-4">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="fw-bold title-box h2">File Sharing</div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center my-3">
+                        <div class="col-md-10 text-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/PMGA-09G9eI?si=LylezIWYEeOiRtQh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center gap-2 mt-4">
+                        <div class="col-md-12 sub-box">
+                            <div class="fw-bold h4 mb-3 title-box">File Sharing</div>
+                            <p>
+                                File sharing is the practice of distributing or providing access to digital files—such as documents, images, videos, and applications—across devices or networks, enabling collaboration and centralized data management. It can be done locally via protocols like SMB/CIFS (Windows) or NFS (Linux), through peer-to-peer (P2P) transfers like AirDrop or torrents, or via cloud services such as Google Drive, OneDrive, or Dropbox. In enterprise environments, dedicated solutions like NAS (Network-Attached Storage) or Distributed File System (DFS) ensure scalable and secure file access. Effective file sharing relies on proper permissions, encryption, and audit logs to maintain security and prevent unauthorized access. Whether for personal use or business, file sharing streamlines workflows while requiring careful management to protect sensitive data.                           
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5th section -->
+                <div id="raid" class="main-box mt-4">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="fw-bold title-box h2">R.A.I.D</div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center my-3">
+                        <div class="col-md-10 text-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/HuZvOip54-M?si=3cR2yO3rzRJfgnPu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                        </div>
+                    </div>
+
+                    <div class="row justify-content-center gap-2 mt-4">
+                        <div class="col-md-12 sub-box">
+                            <div class="fw-bold h4 mb-3 title-box">R.A.I.D</div>
+                            <p>
+                                RAID (Redundant Array of Independent Disks) is a technology that combines multiple hard drives into a single system to either improve performance, increase data protection, or both. The most common RAID levels are RAID 0, RAID 1, RAID 5, and RAID 10. RAID 0, known as striping, spreads data across drives to boost speed but offers no redundancy—if one drive fails, all data is lost. RAID 1, or mirroring, duplicates data on two drives for full redundancy, ensuring data survives if one drive fails, though it halves storage capacity.                        
+                            </p>
+                            <p>
+                                RAID 5 stripes data across three or more drives while also storing parity information, allowing the system to recover data if a single drive fails. RAID 10 combines mirroring and striping, requiring at least four drives, to deliver both speed and redundancy by creating mirrored pairs that are then striped. RAID is widely used in servers, NAS devices, and workstations to enhance data reliability and performance, but it's important to remember that RAID is not a substitute for regular backups, as it doesn't protect against all types of data loss.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 6th section -->
+                <div id="remote-desktop" class="main-box mt-4">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="fw-bold title-box h2">Remote Desktop</div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center my-3">
+                        <div class="col-md-10 text-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/LhTQzPw70zw?si=auoRAu6MEQXJhTzH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center gap-2 mt-4">
+                        <div class="col-md-12 sub-box">
+                            <div class="fw-bold h4 mb-3 title-box">Remote Desktop</div>
+                            <p>
+                                Remote Desktop is a technology that allows a user to connect to and control a computer from another device over a network or the internet, as if they were sitting right in front of it. It enables remote access to files, applications, and system resources on the host computer, making it useful for IT support, telecommuting, or managing servers.                            </p>
+                            <p>
+                                Common tools include Windows Remote Desktop (RDP), TeamViewer, AnyDesk, and Chrome Remote Desktop. These solutions often support features like file transfer, multi-monitor display, and secure encrypted connections.                            
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7th section -->
+                <div id="web-app-server" class="main-box mt-4">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="fw-bold title-box h2">Web and Application Server</div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center my-3">
+                        <div class="col-md-10 text-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/HuZvOip54-M?si=3cR2yO3rzRJfgnPu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center gap-2 mt-4">
+                        <div class="col-md-12 sub-box">
+                            <div class="fw-bold h4 mb-3 title-box">Web and Application Server</div>
+                            <p>
+                                A web server is a software or hardware system that delivers static web content (like HTML pages, images, or CSS files) to users over HTTP/HTTPS. Examples include Apache, Nginx, and Microsoft IIS. Its primary role is to respond to client requests (from browsers) and serve web pages quickly and efficiently.                         
+                            </p>
+                            <p>
+                                An application server, on the other hand, handles dynamic content and business logic. It executes programs (like PHP, Java, or .NET apps) and interacts with databases to generate personalized content. Examples include Tomcat, Node.js, JBoss, and Microsoft IIS (with ASP.NET).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8th section -->
+                <div id="group-policy" class="main-box mt-4">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="fw-bold title-box h2">Group Policy Management</div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center my-3">
+                        <div class="col-md-10 text-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/YUysLFinCFw?si=6tIuWRnzwTJAPL_x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                   
+                         </div>
+                    </div>
+
+                    <div class="row justify-content-center gap-2 mt-4">
+                        <div class="col-md-12 sub-box">
+                            <div class="fw-bold h4 mb-3 title-box">Group Policy Management</div>
+                            <p>
+                                Group Policy Management is a Windows Server feature that lets administrators control settings across a network using Group Policy Objects (GPOs). These enforce rules like security policies, software deployments, and user restrictions across Active Directory domains. Managed via the Group Policy Management Console (GPMC), it ensures consistency and security but requires careful planning to avoid conflicts.                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9th section -->
+                <div id="windows-dev" class="main-box mt-4">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="fw-bold title-box h2">Windows Development Services</div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center my-3">
+                        <div class="col-md-10 text-center">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/YUysLFinCFw?si=6tIuWRnzwTJAPL_x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                   
+                         </div>
+                    </div>
+
+                    <div class="row justify-content-center gap-2 mt-4">
+                        <div class="col-md-12 sub-box">
+                            <div class="fw-bold h4 mb-3 title-box">Windows Development Services</div>
+                            <p>
+                                Windows Development Management refers to the processes, tools, and methodologies used to oversee the creation, deployment, and maintenance of software applications for the Windows platform. It encompasses project planning, resource allocation, version control, and collaboration to ensure efficient and high-quality development.                            
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div>
+            &copy; <script>document.write(new Date().getFullYear());</script> by Yago AS. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript for sidebar navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all links in the sidebar
+            const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+            
+            // Add click event listener to each link
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    
+                    // Get the target section id from the href attribute
+                    const targetId = this.getAttribute('href');
+                    
+                    // Scroll to the target section smoothly
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active class for sidebar links
+                    sidebarLinks.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Function to set active link based on scroll position
+            function setActiveLink() {
+                const sections = document.querySelectorAll('.main-box');
+                let currentSectionId = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.scrollY >= (sectionTop - 100) && window.scrollY < (sectionTop + sectionHeight - 100)) {
+                        currentSectionId = '#' + section.getAttribute('id');
+                    }
+                });
+                
+                // If there's a current section, set its link as active
+                if (currentSectionId) {
+                    sidebarLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === currentSectionId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            }
+            
+            // Listen for scroll events to update active link
+            window.addEventListener('scroll', setActiveLink);
+            
+            // Set initial active link
+            setActiveLink();
+        });
+    </script>
+</body>
+</html>
